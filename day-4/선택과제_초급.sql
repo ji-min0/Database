@@ -1,8 +1,8 @@
 -- 선택과제: 쿼리문 학습으로 더 성장할 사람들을 위해서
--- 생성(CREATE)
--- 초급
 
 USE classicmodels;
+
+-- 생성(CREATE)
 
 -- 1번
 INSERT INTO customers (customerNumber, customerName, contactLastName, contactFirstName, phone, addressLine1, city, country)
@@ -43,3 +43,35 @@ VALUES(501, '과제 공장2', '나', '과제', '02-0000-0000', '이거는주소'
 -- 10번
 INSERT INTO products (productCode, productName, productLine, productScale, productVendor, productDescription, quantityInStock, buyPrice, MSRP)
 VALUES('S00_0001', '선택과제1', '오늘의과제', '1:1', '오즈코딩스쿨', '선택 그러나 필수과제', 1, 0.0, 0.0);
+
+
+-- 읽기(READ)
+-- 1번
+SELECT * FROM customers;
+
+-- 2번
+SELECT * FROM  products;
+
+-- 3번
+SELECT lastName, firstName, jobTitle FROM employees;
+
+-- 4번
+SELECT addressLine1 FROM offices;
+
+-- 5번
+SELECT * FROM orders ORDER BY orderDate DESC LIMIT 10 ;
+
+-- 6번
+SELECT * FROM orderdetails WHERE orderNumber = 10000;
+
+-- 7번
+SELECT * FROM payments WHERE customerNumber = 500;
+
+-- 8번
+SELECT productLine, textDescription FROM productlines;
+
+-- 9번
+SELECT * FROM customers WHERE city = 'Seoul';
+
+-- 10번
+SELECT * FROM products WHERE MSRP = 0 And 100;
